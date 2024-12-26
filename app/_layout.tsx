@@ -1,19 +1,14 @@
 import { Stack } from "expo-router";
-import { FontAwesome } from "@expo/vector-icons"; // Import ikon FontAwesome
+import { FontAwesome } from "@expo/vector-icons";
 import { View } from "react-native";
 
 export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "#fff",
-        },
-        headerTintColor: "#000000",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-        // Menambahkan ikon di bagian kiri header
+        headerStyle: { backgroundColor: "#fff" },
+        headerTintColor: "#000",
+        headerTitleStyle: { fontWeight: "bold" },
         headerLeft: () => (
           <View style={{ paddingLeft: 15, marginRight: 10 }}>
             <FontAwesome name="book" size={24} color="#000" />
@@ -21,8 +16,9 @@ export default function RootLayout() {
         ),
       }}
     >
-      <Stack.Screen name="index" options={{ title: "Daftar Surah" }} />
-      {/* Header title akan berubah sesuai nama surah */}
+      <Stack.Screen name="index" options={{ headerShown:false}} />
+      <Stack.Screen name="home" options={{ title: "Daftar Surah" }} />
+      <Stack.Screen name="DetailSurah" options={{ title: "Detail Surah" }} />
     </Stack>
   );
 }
