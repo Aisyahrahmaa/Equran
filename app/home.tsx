@@ -6,8 +6,10 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   StyleSheet,
+  ImageBackground
 } from "react-native";
 import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -44,7 +46,15 @@ export default function HomeScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <ImageBackground
+    style={styles.container}
+    source={require('../assets/images/bgquran.jpeg')} 
+    >
+
+   
+    
+      {/* Menambahkan StatusBar dengan background putih */}
+      <StatusBar style="dark" backgroundColor="#fff" />
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
@@ -54,19 +64,19 @@ export default function HomeScreen() {
           renderItem={renderSurahItem}
         />
       )}
-    </View>
+       </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff", padding: 10 },
   card: {
-    backgroundColor: "#FFF8E6",
+    backgroundColor: "#C0D6E8",
     padding: 15,
     marginBottom: 10,
     borderRadius: 8,
   },
-  surahName: { fontSize: 18, fontWeight: "bold" },
-  surahInfo: { fontSize: 14, marginBottom: 5 },
-  surahDesc: { fontSize: 16 },
+  surahName: { fontSize: 18, fontWeight: "bold",color:"#fff" },
+  surahInfo: { fontSize: 14, marginBottom: 5, color: "#fff" },
+  surahDesc: { fontSize: 16, color: "#fff" },
 });

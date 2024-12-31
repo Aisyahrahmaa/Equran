@@ -8,7 +8,7 @@ export default function Index() {
 
   return (
     <ImageBackground
-      source={require('../assets/images/wp.jpg')} 
+      source={require('../assets/images/quran.jpeg')} 
       style={styles.container}
     >
      
@@ -45,6 +45,9 @@ export default function Index() {
         <TouchableOpacity style={styles.button} onPress={() => router.push("/")}>
           <Text style={styles.buttonText}>PENGATURAN</Text>
         </TouchableOpacity>
+        <View>
+          <Text style={styles.copyright}>𝐀𝐢𝐬𝐲𝐚𝐭𝐮𝐫 𝐫𝐨𝐡𝐦𝐚𝐡</Text>
+        </View>
       </BlurView>
     </ImageBackground>
   );
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     width: 140,
     height: 40,
-    backgroundColor: "rgba(39, 38, 38, 0.7)", 
+    backgroundColor: "rgba(112, 163, 204,0.7)", 
     borderRadius: 8,
     marginBottom: 5,
   },
@@ -88,4 +91,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold", 
     textAlign: 'center',
   },
+  copyright: {
+    color:'rgba(112, 163, 204,0.7)',
+    transform: [{ translateY:35 }],
+  }
 });

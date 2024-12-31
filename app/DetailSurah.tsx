@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, ActivityIndicator, StyleSheet } from "react-native";
+import { View, Text, FlatList, ActivityIndicator, StyleSheet,ImageBackground } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
 export default function DetailSurah() {
@@ -26,7 +26,11 @@ export default function DetailSurah() {
   }, [surah]);
 
   return (
-    <View style={styles.container}>
+    <ImageBackground 
+    style={styles.container}
+    source={require('../assets/images/bgquran.jpeg')}>
+
+ 
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
@@ -47,7 +51,7 @@ export default function DetailSurah() {
           />
         </View>
       )}
-    </View>
+       </ImageBackground>
   );
 }
 
